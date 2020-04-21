@@ -46,7 +46,7 @@ class Student
     sql = <<-SQL
     SELECT * FROM students WHERE students.grade < 12 
     SQL
-    DB[:conn].execute(sql)
+    DB[:conn].execute(sql).map do |row|
   
   def save
     sql = <<-SQL
